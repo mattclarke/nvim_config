@@ -145,6 +145,13 @@ vim.keymap.set("n", "<M-k>", "<cmd>cprevious<CR>")
 vim.keymap.set("n", "∆", "<cmd>cnext<CR>")
 vim.keymap.set("n", "˚", "<cmd>cprevious<CR>")
 
+-- Inlay hints
+if vim.lsp.inlay_hint then
+  vim.keymap.set('n', '<leader>n', function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, { desc = 'Toggle Inlay Hints' })
+end
+
 -- Set cursor to blink
 -- vim.cmd.set('guicursor', 'a:blinkon100')
 
