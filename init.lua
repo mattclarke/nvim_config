@@ -147,6 +147,26 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<Up>', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', '<Down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Function for displaying LSP warnings, etc. in quickfix
+vim.api.nvim_create_user_command('QFLspDiagnostics', function(args)
+    if args.args == 'ERROR' then
+        vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })
+    elseif args.args == 'WARN' then
+        vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARN })
+    elseif args.args == 'HINT' then
+        vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.HINT })
+    elseif args.args == 'INFO' then
+        vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.INFO })
+    else
+        vim.diagnostic.setqflist({})
+    end
+end, {
+    desc = 'Adds lsp diagnostic to the Quickfix list',
+    complete = function() return { 'ERROR', 'WARN', 'HINT', 'INFO' } end,
+    nargs = '?',
+})
+vim.keymap.set("n", "<leader>qf", ":QFLspDiagnostics")
+
 -- Set cursor to blink
 -- vim.cmd.set('guicursor', 'a:blinkon100')
 
