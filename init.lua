@@ -165,7 +165,7 @@ end, {
     complete = function() return { 'ERROR', 'WARN', 'HINT', 'INFO' } end,
     nargs = '?',
 })
-vim.keymap.set("n", "<leader>qf", ":QFLspDiagnostics")
+vim.keymap.set("n", "<leader>qf", ":QFLspDiagnostics<CR>")
 
 -- Set cursor to blink
 -- vim.cmd.set('guicursor', 'a:blinkon100')
