@@ -6,6 +6,7 @@ return {
 			vim.cmd.colorscheme("tokyonight-night")
 			vim.cmd(":highlight LineNr guifg=grey")
 			vim.cmd(":highlight DiagnosticUnnecessary guifg=grey")
+			vim.cmd(":highlight Comment guifg=grey")
 			vim.cmd.hi("Comment gui=none")
 		end,
 	},
