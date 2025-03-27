@@ -167,6 +167,9 @@ end, {
 })
 vim.keymap.set("n", "<leader>qf", ":QFLspDiagnostics<CR>")
 
+-- grep for selcted item
+vim.keymap.set("v", "<C-f>", "y<ESC>:Telescope live_grep default_text=<c-r>0<CR>", default_opts)
+
 -- Set cursor to blink
 -- vim.cmd.set('guicursor', 'a:blinkon100')
 
