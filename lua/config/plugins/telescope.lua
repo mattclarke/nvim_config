@@ -55,6 +55,9 @@ return {
 				--   },
 				-- },
 				-- pickers = {}
+				defaults = {
+					layout_config = { width = 0.85 },
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
