@@ -123,6 +123,7 @@ end)
 -- My stuff
 vim.g.python3_host_prog = "/Users/mattclarke/.config/nvim/venv_for_nvim/bin/python"
 
+-- Tree toggle
 vim.keymap.set("n", "<c-n>", ":NvimTreeFindFileToggle<CR>")
 
 -- Move selected lines up and down
