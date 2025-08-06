@@ -148,6 +148,10 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<Up>', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', '<Down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Improved ctrl-d and ctrl-u
+vim.keymap.set('n', '<c-d>', "<C-d>zz", { })
+vim.keymap.set('n', '<c-u>', "<C-u>zz", { noremap = true })
+
 -- Function for displaying LSP warnings, etc. in quickfix
 vim.api.nvim_create_user_command('QFLspDiagnostics', function(args)
     if args.args == 'ERROR' then
