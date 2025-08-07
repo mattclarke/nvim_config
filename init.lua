@@ -149,7 +149,7 @@ vim.keymap.set('n', '<Up>', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent =
 vim.keymap.set('n', '<Down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Improved ctrl-d and ctrl-u
-vim.keymap.set('n', '<c-d>', "<C-d>zz", { })
+vim.keymap.set('n', '<c-d>', "<C-d>zz", { noremap = true })
 vim.keymap.set('n', '<c-u>', "<C-u>zz", { noremap = true })
 
 -- Function for displaying LSP warnings, etc. in quickfix
@@ -172,8 +172,11 @@ end, {
 })
 vim.keymap.set("n", "<leader>qf", ":QFLspDiagnostics<CR>")
 
--- grep for selected text
+-- Grep for selected text
 vim.keymap.set("n", "<M-f>", '"zyiw<ESC>:Telescope live_grep default_text=<c-r>z<CR>', {noremap = true})
+
+-- Shortcut for git blame
+vim.keymap.set('n', '<leader>gb', ":Gitsigns blame<CR>")
 
 -- Set cursor to blink
 -- vim.cmd.set('guicursor', 'a:blinkon100')
