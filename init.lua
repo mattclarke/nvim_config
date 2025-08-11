@@ -152,6 +152,9 @@ vim.keymap.set('n', '<Down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent
 vim.keymap.set('n', '<c-d>', "<C-d>zz", { noremap = true })
 vim.keymap.set('n', '<c-u>', "<C-u>zz", { noremap = true })
 
+-- Show marks via Telescope
+vim.keymap.set('n', '<leader>sm', ":Telescope marks<CR>", { silent = true })
+
 -- Function for displaying LSP warnings, etc. in quickfix
 vim.api.nvim_create_user_command('QFLspDiagnostics', function(args)
     if args.args == 'ERROR' then
