@@ -49,11 +49,16 @@ return {
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
 				--
-				defaults = {
+                defaults = {
 				  -- layout_strategy = "vertical",
-				  layout_config = { width = 0.90 },
+				  layout_config = { width = 0.90, height = 0.90 }, 
+				  -- path_display = { truncate = 3 },
 				},
-				-- pickers = {}
+				pickers = {
+				  lsp_references = {
+					show_line = false,                                                                                                                                                            
+				  }
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
