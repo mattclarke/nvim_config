@@ -155,6 +155,9 @@ vim.keymap.set('n', '<c-u>', "<C-u>zz", { noremap = true })
 -- Show marks via Telescope
 vim.keymap.set('n', '<leader>sm', ":Telescope marks<CR>", { silent = true })
 
+-- Override get references so it shortens the path
+vim.keymap.set('n', '<leader>gr', ":Telescope lsp_references path_display={shorten=4}<CR>", { silent = true }) 
+
 -- Function for displaying LSP warnings, etc. in quickfix
 vim.api.nvim_create_user_command('QFLspDiagnostics', function(args)
     if args.args == 'ERROR' then
