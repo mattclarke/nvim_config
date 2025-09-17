@@ -57,7 +57,7 @@ return {
 				pickers = {
 				  lsp_references = {
 					-- show_line = false,   
-					fname_width = 50,
+					fname_width = 40,
 				  }
 				},
 				extensions = {
